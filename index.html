@@ -1,0 +1,219 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="CyberNest — cybersecurity learning labs and challenges">
+  <title>CyberNest — Security Learning Labs</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <!-- Authentication -->
+  <div id="auth" class="auth">
+    <div class="auth-brand">
+      <span class="brand-mark">C</span>
+      <div>
+        <strong>CYBERNEST</strong>
+        <small>SECURITY LEARNING LABS</small>
+      </div>
+    </div>
+
+    <div class="auth-box">
+      <section class="auth-copy">
+        <span class="eyebrow">LEARN · PRACTICE · PROGRESS</span>
+        <h1>Build practical cybersecurity skills.</h1>
+        <p>Learn concepts, practice realistic labs, solve challenges and build a visible learning record.</p>
+
+        <ul class="auth-features">
+          <li><span>✓</span> Hands-on security labs</li>
+          <li><span>✓</span> Structured learning paths</li>
+          <li><span>✓</span> XP, badges and challenges</li>
+        </ul>
+      </section>
+
+      <section class="auth-form">
+        <div class="tabs" role="tablist">
+          <button type="button" class="tab active" data-auth="login">Sign in</button>
+          <button type="button" class="tab" data-auth="register">Create account</button>
+        </div>
+
+        <form id="login">
+          <label>
+            Email
+            <input id="lemail" type="email" autocomplete="email" placeholder="you@example.com" required>
+          </label>
+
+          <label>
+            Password
+            <input id="lpass" type="password" autocomplete="current-password" placeholder="Password" required>
+          </label>
+
+          <div class="between">
+            <label class="check">
+              <input id="remember" type="checkbox">
+              <span>Keep me signed in</span>
+            </label>
+            <a href="#" id="forgot">Forgot password?</a>
+          </div>
+
+          <button type="submit" class="btn primary full">Sign in <span>→</span></button>
+          <small class="hint">Frontend demo: create an account first, then sign in.</small>
+        </form>
+
+        <form id="register" class="hide">
+          <label>
+            Full name
+            <input id="rname" autocomplete="name" placeholder="Alex Carter" required>
+          </label>
+
+          <label>
+            Email
+            <input id="remail" type="email" autocomplete="email" placeholder="you@example.com" required>
+          </label>
+
+          <label>
+            Password
+            <input id="rpass" type="password" autocomplete="new-password" minlength="6" placeholder="Minimum 6 characters" required>
+          </label>
+
+          <label class="check">
+            <input id="terms" type="checkbox" required>
+            <span>I agree to the terms</span>
+          </label>
+
+          <button type="submit" class="btn primary full">Create account <span>→</span></button>
+        </form>
+      </section>
+    </div>
+  </div>
+
+  <!-- Application -->
+  <div id="app" class="hide">
+    <div id="sidebarOverlay" class="sidebar-overlay"></div>
+
+    <aside class="sidebar" id="sidebar" aria-label="Main navigation">
+      <div class="brand">
+        <span class="brand-mark">C</span>
+        <div class="brand-text">
+          <strong>CYBERNEST</strong>
+          <small>SECURITY LEARNING LABS</small>
+        </div>
+      </div>
+
+      <nav id="nav" class="sidebar-nav">
+        <div class="nav-group">
+          <p>LEARN</p>
+          <button type="button" class="nav active" data-page="dashboard">
+            <span class="nav-icon">⌂</span><span>Dashboard</span>
+          </button>
+          <button type="button" class="nav" data-page="labs">
+            <span class="nav-icon">▦</span><span>Explore Labs</span>
+          </button>
+          <button type="button" class="nav" data-page="challenges">
+            <span class="nav-icon">◉</span><span>Challenges</span>
+          </button>
+          <button type="button" class="nav" data-page="paths">
+            <span class="nav-icon">⌁</span><span>Learning Paths</span>
+          </button>
+        </div>
+
+        <div class="nav-group">
+          <p>PRACTICE</p>
+          <button type="button" class="nav" data-page="labs" data-filter="Web">
+            <span class="nav-icon">&lt;/&gt;</span><span>Web Security</span>
+          </button>
+          <button type="button" class="nav" data-page="labs" data-filter="API">
+            <span class="nav-icon">{ }</span><span>API Security</span>
+          </button>
+          <button type="button" class="nav" data-page="labs" data-filter="Linux">
+            <span class="nav-icon">$_</span><span>Linux</span>
+          </button>
+          <button type="button" class="nav" data-page="labs" data-filter="Network">
+            <span class="nav-icon">◈</span><span>Networking</span>
+          </button>
+          <button type="button" class="nav" data-page="labs" data-filter="Database">
+            <span class="nav-icon">DB</span><span>Database</span>
+          </button>
+        </div>
+
+        <div class="nav-group">
+          <p>COMMUNITY</p>
+          <button type="button" class="nav" data-page="leaderboard">
+            <span class="nav-icon">♕</span><span>Leaderboard</span>
+          </button>
+          <button type="button" class="nav" data-page="writeups">
+            <span class="nav-icon">✎</span><span>Writeups</span>
+          </button>
+        </div>
+
+        <div class="nav-group">
+          <p>ACCOUNT</p>
+          <button type="button" class="nav" data-page="profile">
+            <span class="nav-icon">◯</span><span>Profile</span>
+          </button>
+          <button type="button" class="nav" data-page="settings">
+            <span class="nav-icon">⚙</span><span>Settings</span>
+          </button>
+        </div>
+      </nav>
+
+      <div class="side-bottom">
+        <button type="button" class="mini" data-page="profile" aria-label="Open profile">
+          <i id="savatar">A</i>
+          <span>
+            <b id="sname">Alex Carter</b>
+            <small id="sxp">Level 8 · 2,140 XP</small>
+          </span>
+        </button>
+        <button type="button" id="logout" class="signout">
+          <span>↪</span> Sign out
+        </button>
+      </div>
+    </aside>
+
+    <main class="main">
+      <header class="top">
+        <div class="top-left">
+          <button type="button" id="menu" class="hamb" aria-label="Open navigation" aria-expanded="false">☰</button>
+          <span class="workspace"><span class="status-dot"></span> Learning workspace</span>
+        </div>
+
+        <div class="top-right">
+          <button type="button" id="themeToggle" class="icon-btn" title="Toggle theme" aria-label="Toggle theme">☾</button>
+
+          <label class="search" aria-label="Search">
+            <span>⌕</span>
+            <input id="search" autocomplete="off" placeholder="Search labs, challenges, topics...">
+            <kbd>Ctrl K</kbd>
+          </label>
+
+          <button type="button" id="notify" class="icon-btn notification-btn" aria-label="Notifications">
+            ♧
+            <span class="notification-dot"></span>
+          </button>
+
+          <button type="button" id="userBtn" class="user-btn" aria-label="Open profile">
+            <i id="havatar">A</i>
+            <span id="hname">Alex</span>
+            <span class="chevron">⌄</span>
+          </button>
+        </div>
+      </header>
+
+      <div id="page" class="page"></div>
+    </main>
+  </div>
+
+  <div id="toast" role="status" aria-live="polite"></div>
+
+  <div id="modal" class="hide" aria-hidden="true">
+    <div class="backdrop" data-close></div>
+    <div class="modal-card" id="modalCard" role="dialog" aria-modal="true"></div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
